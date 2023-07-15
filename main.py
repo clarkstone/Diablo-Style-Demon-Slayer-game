@@ -36,6 +36,14 @@ class Player:
             "Love Breathing": {
                 "Active Skills": ["Heart's Touch", "Love's Embrace"],
                 "Passive Skills": ["Healing Touch", "Heart's Shield"]
+            },
+            "Mist Breathing": {
+                "Active Skills": ["Mist Shroud", "Waterfall Mist"],
+                "Passive Skills": ["Mist Cloak", "Mist Manipulation"]
+            },
+            "Sound Breathing": {
+                "Active Skills": ["Sonic Wave", "Harmonious Melody"],
+                "Passive Skills": ["Resonating Melody", "Sound Amplification"]
             }
         }
 
@@ -111,7 +119,9 @@ class Player:
         print("2. Thunder Breathing")
         print("3. Flame Breathing")
         print("4. Love Breathing")
-        print("5. Exit")
+        print("5. Mist Breathing")
+        print("6. Sound Breathing")
+        print("7. Exit")
 
         style_choice = input("Enter your choice: ")
 
@@ -137,6 +147,16 @@ class Player:
             print(f"{self.name} has chosen Love Breathing! Attack increased by 8 and attack speed increased.")
             self.special_ability = "Heart's Touch"
         elif style_choice == "5":
+            self.breathing_style = "Mist Breathing"
+            self.attack += 10
+            print(f"{self.name} has chosen Mist Breathing! Attack increased by 10.")
+            self.special_ability = "Mist Shroud"
+        elif style_choice == "6":
+            self.breathing_style = "Sound Breathing"
+            self.attack += 12
+            print(f"{self.name} has chosen Sound Breathing! Attack increased by 12.")
+            self.special_ability = "Sonic Wave"
+        elif style_choice == "7":
             print("Breathing Style selection canceled.")
         else:
             print("Invalid choice. Try again.")
