@@ -22,28 +22,70 @@ class Player:
         self.talent_points = 0
         self.skill_tree = {
             "Water Breathing": {
-                "Active Skills": ["Water Splash", "Whirlpool"],
+                "Active Skills": ["Water Splash", "Whirlpool", "Water Surface Slash", "Water Wheel",
+                                  "Improved, Lateral Water Wheel", "Flowing Dance", "Striking Tide",
+                                  "Striking Tide, Turbulent", "Blessed Rain After the Drought", "Whirlpool, Flow",
+                                  "Drop Ripple Thrust", "Drop Ripple Thrust, Curve", "Waterfall Basin",
+                                  "Splashing Water Flow, Turbulent", "Constant Flux", "Dead Calm"],
                 "Passive Skills": ["Water Veil", "Water Mastery"]
             },
-            "Thunder Breathing": {
-                "Active Skills": ["Thunderclap", "Lightning Bolt"],
-                "Passive Skills": ["Electric Charge", "Lightning Mastery"]
-            },
             "Flame Breathing": {
-                "Active Skills": ["Fire Burst", "Inferno"],
+                "Active Skills": ["Fire Burst", "Inferno", "Unknown Fire", "Rising Scorching Sun", "Blazing Universe",
+                                  "Blooming Flame Undulation", "Flame Tiger", "Rengoku"],
                 "Passive Skills": ["Burning Aura", "Fire Mastery"]
             },
-            "Love Breathing": {
-                "Active Skills": ["Heart's Touch", "Love's Embrace"],
-                "Passive Skills": ["Healing Touch", "Heart's Shield"]
+            "Thunder Breathing": {
+                "Active Skills": ["Thunderclap", "Lightning Bolt", "Thunderclap and Flash", "Sixfold", "Eightfold",
+                                  "Godspeed", "Rice Spirit", "Thunder Swarm", "Distant Thunder", "Heat Lightning",
+                                  "Rumble and Flash", "Honoikazuchi no Kami"],
+                "Passive Skills": ["Electric Charge", "Lightning Mastery"]
             },
-            "Mist Breathing": {
-                "Active Skills": ["Mist Shroud", "Waterfall Mist"],
-                "Passive Skills": ["Mist Cloak", "Mist Manipulation"]
+            "Stone Breathing": {
+                "Active Skills": ["Serpentinite Bipolar", "Upper Smash", "Stone Skin", "Volcanic Rock, Rapid Conquest",
+                                  "Arcs of Justice"],
+                "Passive Skills": ["Earth Connection", "Stone Mastery"]
             },
             "Sound Breathing": {
-                "Active Skills": ["Sonic Wave", "Harmonious Melody"],
+                "Active Skills": ["Sonic Wave", "Harmonious Melody", "Roar", "Constant Resounding Slashes",
+                                  "String Performance"],
                 "Passive Skills": ["Resonating Melody", "Sound Amplification"]
+            },
+            "Mist Breathing": {
+                "Active Skills": ["Mist Shroud", "Waterfall Mist", "Low Clouds, Distant Haze", "Eight-Layered Mist", "Scattering Mist Splash", "Shifting Flow Slash", "Sea of Clouds and Haze", "Lunar Dispersing Mist", "Obscuring Clouds"],
+                "Passive Skills": ["Mist Cloak", "Mist Manipulation"]
+            },
+            "Love Breathing": {
+                "Active Skills": ["Heart's Touch", "Love's Embrace", "Shivers of First Love", "Love Pangs",
+                                  "Catlove Shower", "Swaying Love, Wildclaw", "Cat-Legged Winds of Love"],
+                "Passive Skills": ["Healing Touch", "Heart's Shield"]
+            },
+            "Wind Breathing": {
+                "Active Skills": ["Dust Whirlwind Cutter", "Claws-Purifying Wind", "Clean Storm Wind Tree",
+                                  "Rising Dust Storm", "Cold Mountain Wind", "Black Wind Mountain Mist",
+                                  "Gale, Sudden Gusts", "Primary Gale Slash", "Idaten Typhoon"],
+                "Passive Skills": []
+            },
+            "Beast Breathing": {
+                "Active Skills": ["Roar", "Constant Resounding Slashes", "String Performance", "Rising Kick",
+                                  "String Performance, Bursting Bloom"],
+                "Passive Skills": []
+            },
+            "Serpent Breathing": {
+                "Active Skills": ["Roar", "Constant Resounding Slashes", "String Performance", "Rising Kick",
+                                  "String Performance, Bursting Bloom"],
+                "Passive Skills": []
+            },
+            "Flower Breathing": {
+                "Active Skills": ["Honorable Shadow Plum", "Crimson Hanagoromo", "Peonies of Futility",
+                                  "Whirling Peach", "Equinoctial Vermilion Eye"],
+                "Passive Skills": []
+            },
+            "Insect Breathing": {
+                "Active Skills": ["Butterfly Dance: Caprice", "Dance of the Bee Sting: True Flutter",
+                                  "Dance of the Dragonfly: Compound Eye Hexagon",
+                                  "Dance of the Centipede: Hundred-Legged Zigzag", "Swift Thrust", "Rising Thrust",
+                                  "Sixfold Thrust", "Butterfly Dance: Caprice, Illusory Light"],
+                "Passive Skills": []
             }
         }
 
@@ -114,52 +156,86 @@ class Player:
             print("No health potions left.")
 
     def choose_breathing_style(self):
-        print("\nChoose your Breathing Style:")
+        print("Choose your Breathing Style:")
         print("1. Water Breathing")
-        print("2. Thunder Breathing")
-        print("3. Flame Breathing")
-        print("4. Love Breathing")
-        print("5. Mist Breathing")
-        print("6. Sound Breathing")
-        print("7. Exit")
+        print("2. Flame Breathing")
+        print("3. Thunder Breathing")
+        print("4. Stone Breathing")
+        print("5. Sound Breathing")
+        print("6. Mist Breathing")
+        print("7. Love Breathing")
+        print("8. Wind Breathing")
+        print("9. Beast Breathing")
+        print("10. Serpent Breathing")
+        print("11. Flower Breathing")
+        print("12. Insect Breathing")
 
-        style_choice = input("Enter your choice: ")
+        style_choice = input("Enter the number of your choice: ")
 
         if style_choice == "1":
             self.breathing_style = "Water Breathing"
             self.attack += 10
-            print(f"{self.name} has chosen Water Breathing! Attack increased by 10.")
             self.special_ability = "Water Splash"
+            print(f"{self.name} has chosen Water Breathing! Attack increased by 10.")
         elif style_choice == "2":
-            self.breathing_style = "Thunder Breathing"
-            self.attack += 15
-            print(f"{self.name} has chosen Thunder Breathing! Attack increased by 15.")
-            self.special_ability = "Lightning Bolt"
-        elif style_choice == "3":
             self.breathing_style = "Flame Breathing"
             self.attack += 12
-            print(f"{self.name} has chosen Flame Breathing! Attack increased by 12.")
             self.special_ability = "Fire Burst"
+            print(f"{self.name} has chosen Flame Breathing! Attack increased by 12.")
+        elif style_choice == "3":
+            self.breathing_style = "Thunder Breathing"
+            self.attack += 15
+            self.special_ability = "Lightning Bolt"
+            print(f"{self.name} has chosen Thunder Breathing! Attack increased by 15.")
         elif style_choice == "4":
+            self.breathing_style = "Stone Breathing"
+            self.attack += 10
+            self.special_ability = "Serpentinite Bipolar"
+            print(f"{self.name} has chosen Stone Breathing! Attack increased by 10.")
+        elif style_choice == "5":
+            self.breathing_style = "Sound Breathing"
+            self.attack += 12
+            self.special_ability = "Sonic Wave"
+            print(f"{self.name} has chosen Sound Breathing! Attack increased by 12.")
+        elif style_choice == "6":
+            self.breathing_style = "Mist Breathing"
+            self.attack += 10
+            self.special_ability = "Mist Shroud"
+            print(f"{self.name} has chosen Mist Breathing! Attack increased by 10.")
+        elif style_choice == "7":
             self.breathing_style = "Love Breathing"
             self.attack += 8
             self.attack_speed += 0.1
-            print(f"{self.name} has chosen Love Breathing! Attack increased by 8 and attack speed increased.")
             self.special_ability = "Heart's Touch"
-        elif style_choice == "5":
-            self.breathing_style = "Mist Breathing"
+            print(f"{self.name} has chosen Love Breathing! Attack increased by 8 and attack speed increased.")
+        elif style_choice == "8":
+            self.breathing_style = "Wind Breathing"
             self.attack += 10
-            print(f"{self.name} has chosen Mist Breathing! Attack increased by 10.")
-            self.special_ability = "Mist Shroud"
-        elif style_choice == "6":
-            self.breathing_style = "Sound Breathing"
-            self.attack += 12
-            print(f"{self.name} has chosen Sound Breathing! Attack increased by 12.")
-            self.special_ability = "Sonic Wave"
-        elif style_choice == "7":
-            print("Breathing Style selection canceled.")
+            self.special_ability = "Dust Whirlwind Cutter"
+            print(f"{self.name} has chosen Wind Breathing! Attack increased by 10.")
+        elif style_choice == "9":
+            self.breathing_style = "Beast Breathing"
+            self.attack += 10
+            self.special_ability = "Roar"
+            print(f"{self.name} has chosen Beast Breathing! Attack increased by 10.")
+        elif style_choice == "10":
+            self.breathing_style = "Serpent Breathing"
+            self.attack += 10
+            self.special_ability = "Roar"
+            print(f"{self.name} has chosen Serpent Breathing! Attack increased by 10.")
+        elif style_choice == "11":
+            self.breathing_style = "Flower Breathing"
+            self.attack += 10
+            self.special_ability = "Honorable Shadow Plum"
+            print(f"{self.name} has chosen Flower Breathing! Attack increased by 10.")
+        elif style_choice == "12":
+            self.breathing_style = "Insect Breathing"
+            self.attack += 10
+            self.special_ability = "Butterfly Dance: Caprice"
+            print(f"{self.name} has chosen Insect Breathing! Attack increased by 10.")
         else:
             print("Invalid choice. Try again.")
+
 
     def use_special_ability(self, enemy):
         if self.special_ability:
